@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import PostCard from '../../../components/PostCard.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const pairs = new Set<string>();
+  for (const p of posts) {
+    if (p.data.subcategory) pairs.add(`${p.data.category}/${p.data.subcategory}`);
+  }
+  return [...pairs].map((pair) => {
+    const [category, subcategory] = pair.split('/');
+    return { params: { category, subcategory } };
+  });
+}
+
+const { category, subcategory } = Astro.params;
+const posts = (await getCollection('posts',
+  ({ data }) => !data.draft && data.category === category && data.subcategory === subcategory
+)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title={`${category} / ${subcategory}`}>
+  <p class="page-heading">
+    category · <strong><a href={`/categories/${category}/`}>{category}</a> / {subcategory}</strong>
+  </p>
+  {posts.map((post) => <PostCard post={post} />)}
+</Base>

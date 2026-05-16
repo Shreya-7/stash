@@ -1,0 +1,22 @@
+---
+import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { post: CollectionEntry<'posts'>; }
+const { post } = Astro.props;
+const author = await getEntry(post.data.author);
+const dateStr = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'short', day: 'numeric',
+});
+---
+<a href={`/posts/${post.id}/`} class="post-card">
+  <h2 class="post-card__title">{post.data.title}</h2>
+  <div class="post-card__meta">
+    <span>{dateStr}</span>
+    <span>·</span>
+    <span>{author?.data.name}</span>
+    <span>·</span>
+    <span class="tag">{post.data.category}{post.data.subcategory ? ` / ${post.data.subcategory}` : ''}</span>
+  </div>
+  {post.data.excerpt && <p class="post-card__excerpt">{post.data.excerpt}</p>}
+</a>

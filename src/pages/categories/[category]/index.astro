@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { CATEGORIES } from '../../../content.config';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map((category) => ({ params: { category } }));
+}
+
+const { category } = Astro.params;
+const posts = (await getCollection('posts',
+  ({ data }) => !data.draft && data.category === category
+)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const subcategories = [...new Set(posts.map((p) => p.data.subcategory).filter(Boolean))] as string[];
+---
+<Base title={category}>
+  <p class="page-heading">category · <strong>{category}</strong></p>
+  {subcategories.length > 0 && (
+    <div class="filters">
+      <div class="filters__group">
+        <span class="filters__label">subcategory:</span>
+        <a href={`/categories/${category}/`} class="is-active">all</a>
+        {subcategories.map((s) => <a href={`/categories/${category}/${s}/`}>{s}</a>)}
+      </div>
+    </div>
+  )}
+  {posts.length === 0
+    ? <p>Nothing yet.</p>
+    : posts.map((post) => <PostCard post={post} />)}
+</Base>

@@ -1,0 +1,18 @@
+---
+import { CATEGORIES } from '../content.config';
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href);
+---
+<nav class="nav">
+  <a href="/" class="nav__brand">stash</a>
+  <div class="nav__links">
+    {CATEGORIES.map((c) => (
+      <a href={`/categories/${c}/`} class:list={[{ 'is-active': isActive(`/categories/${c}`) }]}>
+        {c}
+      </a>
+    ))}
+    <a href="/authors/shreya/" class:list={[{ 'is-active': isActive('/authors/shreya') }]}>shreya</a>
+    <a href="/authors/abhishek/" class:list={[{ 'is-active': isActive('/authors/abhishek') }]}>abhishek</a>
+  </div>
+</nav>
