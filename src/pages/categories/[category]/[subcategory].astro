@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import PostCard from '../../../components/PostCard.astro';
+import { u } from '../../../lib/url';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -22,7 +23,7 @@ const posts = (await getCollection('posts',
 ---
 <Base title={`${category} / ${subcategory}`}>
   <p class="page-heading">
-    category · <strong><a href={`/categories/${category}/`}>{category}</a> / {subcategory}</strong>
+    category · <strong><a href={u(`categories/${category}/`)}>{category}</a> / {subcategory}</strong>
   </p>
   {posts.map((post) => <PostCard post={post} />)}
 </Base>

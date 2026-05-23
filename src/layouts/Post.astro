@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import { getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { u } from '../lib/url';
 
 interface Props { post: CollectionEntry<'posts'>; }
 const { post } = Astro.props;
@@ -19,7 +20,7 @@ const fmt = (d: Date) =>
         <span>·</span>
         <span>{fmt(post.data.date)}</span>
         <span>·</span>
-        <a href={`/categories/${post.data.category}/`} class="tag">
+        <a href={u(`categories/${post.data.category}/`)} class="tag">
           {post.data.category}{post.data.subcategory ? ` / ${post.data.subcategory}` : ''}
         </a>
       </div>

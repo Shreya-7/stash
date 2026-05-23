@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
+import { u } from '../lib/url';
 ---
 <Base title="not found">
   <p class="page-heading">404 · this page doesn't exist (yet)</p>
-  <p><a href="/">← back to all posts</a></p>
+  <p><a href={u()}>← back to all posts</a></p>
 </Base>
