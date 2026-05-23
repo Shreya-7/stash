@@ -1,6 +1,39 @@
 # Writing a post
 
-## 1. Create the file
+## The fast way
+
+```bash
+npm run new:post
+```
+
+Interactive — asks for title, slug, category, subcategory, author, excerpt. Creates the file with `draft: true` frontmatter and opens it in `$EDITOR` (falls back to `$VISUAL`, then `vi`).
+
+```
+$ npm run new:post
+title: Notes on Vim macros
+slug [notes-on-vim-macros]:
+category:
+  1. tech
+  2. fitness
+  3. thots
+  4. crafts
+choose 1-4: 1
+subcategory (optional): vim
+author:
+  1. abhishek
+  2. shreya
+choose 1-2: 2
+one-line excerpt (optional): Recording, replaying, and the @@ shortcut.
+
+✓ created src/content/posts/tech/notes-on-vim-macros.md
+  opening in nvim…
+```
+
+Then jump to [§ Body](#body) below.
+
+## The manual way
+
+### 1. Create the file
 
 ```
 src/content/posts/<category>/<slug>.md
@@ -10,7 +43,7 @@ src/content/posts/<category>/<slug>.md
 - `<slug>` becomes the URL: `src/content/posts/tech/foo.md` → `/posts/tech/foo/`.
 - Use lowercase, hyphenated slugs. Don't change a slug after publishing — it breaks the permalink.
 
-## 2. Frontmatter
+### 2. Frontmatter
 
 ```yaml
 ---
@@ -27,7 +60,7 @@ cover: ./cover.jpg        # optional, relative to the .md file
 
 The build will fail loudly if `category` or `author` doesn't match a known value. That's the safety net.
 
-## 3. Body
+## Body
 
 Standard markdown. Code fences get syntax highlighting via Shiki (built into Astro, no client JS).
 
@@ -37,7 +70,7 @@ const x = 1;
 ```
 ````
 
-## 4. Images and GIFs
+## Images and GIFs
 
 Drop the image next to the markdown file, then reference it relatively:
 
@@ -49,11 +82,11 @@ Astro's image pipeline resizes and reformats automatically. For GIFs, drop them 
 
 Keep individual images under ~1 MB where possible. The repo is the storage; GitHub repos get unhappy past ~1 GB total.
 
-## 5. Drafts
+## Drafts
 
 Set `draft: true` in frontmatter. The post shows up in `npm run dev` but is excluded from production builds.
 
-## 6. Publish
+## Publish
 
 ```bash
 git add src/content/posts/<category>/<slug>.md
@@ -61,4 +94,4 @@ git commit -m "post: <title>"
 git push
 ```
 
-Once the deploy workflow is wired up, the push triggers a rebuild and the post is live in ~1 minute.
+The push triggers a rebuild and the post is live in ~1 minute. See [deploying](deploying.md) for what happens behind the scenes.

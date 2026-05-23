@@ -2,15 +2,19 @@
 
 ## Prerequisites
 
-- **Node 22+** (see `.nvmrc`). If you use nvm: `nvm install 22 && nvm use 22`. If you use asdf: `asdf install nodejs 22.22.3`.
-- npm 10+ (ships with Node 22).
+- **Node 22+**. The repo includes both `.nvmrc` (nvm) and `.tool-versions` (asdf) pinning `22.22.3`, so either tool will pick the right version automatically when you `cd` in.
+  - nvm: `nvm install 22`
+  - asdf: `asdf plugin add nodejs && asdf install nodejs 22.22.3`
+- npm 10+ ships with Node 22.
+
+> **Heads-up if you have both nvm and asdf:** asdf shims usually win on PATH, so `nvm use` won't help on its own. The `.tool-versions` file is what tells asdf to use Node 22 here.
 
 ## First run
 
 ```bash
 git clone <repo>
 cd stash
-nvm use            # reads .nvmrc
+node --version     # should print v22.x
 npm install
 npm run dev        # http://localhost:4321
 ```

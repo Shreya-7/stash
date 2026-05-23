@@ -14,7 +14,23 @@ Caveat: typos silently create "new" subcategories (`marcos` ≠ `macros`). Skim 
 
 ## Add a category
 
-Two steps:
+### The fast way
+
+```bash
+npm run new:category
+```
+
+Prompts for a name (slugified to lowercase + hyphens), refuses duplicates, edits `src/content.config.ts`, and creates the folder.
+
+```
+$ npm run new:category
+new category name (e.g. cooking): cooking
+✓ added "cooking" to CATEGORIES in src/content.config.ts
+✓ created src/content/posts/cooking/
+  next: npm run new:post
+```
+
+### The manual way
 
 1. Add the name to the `CATEGORIES` tuple in `src/content.config.ts`:
    ```ts
@@ -22,7 +38,7 @@ Two steps:
    ```
 2. Create the folder: `src/content/posts/cooking/`.
 
-The nav, category pages, and frontmatter validation all pick it up from the tuple. If you try to write `category: cooking` in a post without step 1, the build fails — by design.
+Either way, the nav, category pages, and frontmatter validation pick the new category up from the tuple. If you try to write `category: cooking` in a post without doing one of the above, the build fails — by design.
 
 ## Rename a category
 

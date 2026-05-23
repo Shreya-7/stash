@@ -7,7 +7,7 @@ A small blog for daily learnings.
 
 ## Stack
 
-Astro static site → GitHub Pages. Posts are markdown files in this repo. No database, no backend. See [ADR 0002](decisions/0002-static-site-generator-over-custom-spa.md) for why.
+Astro static site → GitHub Pages. Posts are markdown files in this repo. No database, no backend. See [decisions/](decisions/) for why.
 
 ## Quick start
 

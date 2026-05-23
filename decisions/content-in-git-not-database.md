@@ -1,4 +1,4 @@
-# 0001. Content stored as markdown files in git, not in a database
+# Content stored as markdown files in git, not in a database
 
 Date: 2026-05-16
 Status: Accepted
@@ -21,7 +21,7 @@ and are referenced from markdown. Astro processes them through its image pipelin
 - Backups via Github
 - No database to provision, secure, back up, or migrate
 - Search is extremely simple
-- Adding a post requires either a local clone or editing files via GitHub's web UI. Acceptable since the in-app editor requirement was dropped (ADR 0002).
+- Adding a post requires either a local clone or editing files via GitHub's web UI. Acceptable since the in-app editor requirement was dropped.
 
 ## Alternatives considered
 
