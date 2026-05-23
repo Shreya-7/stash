@@ -35,15 +35,18 @@ try {
   process.exit(1);
 } catch {}
 
+// Always double-quote freeform user input so colons/quotes/etc don't break YAML.
+const yq = (s) => `"${s.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
+
 const frontmatter = [
   '---',
-  `title: ${title}`,
+  `title: ${yq(title)}`,
   `author: ${author}`,
   `category: ${category}`,
-  ...(subcategory ? [`subcategory: ${subcategory}`] : []),
+  ...(subcategory ? [`subcategory: ${yq(subcategory)}`] : []),
   `date: ${todayISO()}`,
   'draft: true',
-  ...(excerpt ? [`excerpt: ${excerpt}`] : []),
+  ...(excerpt ? [`excerpt: ${yq(excerpt)}`] : []),
   '---',
   '',
   'Write here.',

@@ -70,17 +70,27 @@ const x = 1;
 ```
 ````
 
-## Images and GIFs
+## Images, GIFs, videos
 
-Drop the image next to the markdown file, then reference it relatively:
+**Images and GIFs** — drop the file next to the markdown file, reference it relatively:
 
 ```markdown
 ![alt text](./diagram.png)
 ```
 
-Astro's image pipeline resizes and reformats automatically. For GIFs, drop them in `src/assets/posts/` and use the `<Image>` component if you want explicit width control — otherwise the markdown form is fine.
+Astro's image pipeline resizes and re-encodes automatically. GIFs stay GIFs (not re-encoded). If a GIF is over a few MB, export as `.mp4` instead — usually 10–50× smaller.
 
-Keep individual images under ~1 MB where possible. The repo is the storage; GitHub repos get unhappy past ~1 GB total.
+**Videos (short, self-hosted)** — drop the file in `public/videos/`, then in your markdown:
+
+```markdown
+<video src="/stash/videos/clip.mp4" controls muted playsinline></video>
+```
+
+The `/stash/` prefix is hardcoded because markdown doesn't go through the `u()` helper; one find-and-replace when we move to a custom domain.
+
+**Videos (long, or large files)** — embed from YouTube/Vimeo with a raw `<iframe>`. Don't put big files in the repo.
+
+**Size budget** — keep individual files under ~1 MB where possible. The repo is the storage; GitHub repos get unhappy past ~1 GB total.
 
 ## Drafts
 
