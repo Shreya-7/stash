@@ -7,7 +7,7 @@ interface Props {
   title?: string;
   description?: string;
 }
-const { title, description = 'A small two-author blog for daily learnings.' } = Astro.props;
+const { title, description = 'A small blog for daily learnings.' } = Astro.props;
 const fullTitle = title ? `${title} · stash` : 'stash';
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).toString();
 ---
@@ -33,7 +33,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).to
         <slot />
       </main>
       <footer class="footer">
-        <p>stash · by shreya &amp; abhishek</p>
+        <p>stash · by 2 enthu cutlets</p>
       </footer>
     </div>
   </body>
