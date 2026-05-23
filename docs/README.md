@@ -14,3 +14,4 @@ This is the operational counterpart to [`decisions/`](../decisions/):
 - [adding-a-category.md](adding-a-category.md)
 - [adding-an-author.md](adding-an-author.md)
 - [deploying.md](deploying.md)
+- adding another markdown here :) i love markdown

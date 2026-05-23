@@ -16,7 +16,7 @@ The first edition is all about my IDE since that is where I spend most of the ti
 2. **Kawaii**: think pastels, cute animals, sparkles, the works 💖  
 3. Basically anything that is even mildly cute lol
 
-But hey, this is what I’m feeling at this moment. Maybe a few months down the line, i might want a crazy techno theme 🤷🏻‍♀️
+But hey, this is what I’m feeling at this moment. Maybe a few months down the line, I might want a crazy techno theme 🤷🏻‍♀️
 
 # The setup
 
@@ -27,15 +27,15 @@ I use Jetbrains IDEs (PyCharm, WebStorm, IntelliJ), and I used Google \+ Claude 
 This proved to be unnecessarily tricky, given my requirements. I really wanted something in purple but unfortunately all purple themes are violently dark :(  
 Although I will highly recommend fairyfloss \- it is a beautiful dark purple theme and will be my go-to if and when I ever switch back to dark mode\!
 
-The winner: **Sakura**
+The winner: **[Sakura](https://plugins.jetbrains.com/plugin/22872-sakura-theme)**
 
 ![Sakura theme in JetBrains](./screenshot.png)
 
 Other considerations:
 
-1. **Cute Pink Light**: a very close second  
-2. **Catppuccin Latte**: idk what kind of marketing these guys have done but these Catppuccin themes pop up in every single recommendation. It was too white/stark for me  
-3. **Mocha Mouse Light**: found it to be really beautiful and warm, saving this for a chocolatey-themed setup in the future\! 🍫
+1. **[Cute Pink Light](https://plugins.jetbrains.com/plugin/16721-cute-pink-light-theme)**: a very close second  
+2. **[Catppuccin Latte](https://plugins.jetbrains.com/plugin/18682-catppuccin-theme)**: idk what kind of marketing these guys have done but these Catppuccin themes pop up in every single recommendation. It was too white/stark for me  
+3. **[Mocha Mouse Light](https://plugins.jetbrains.com/plugin/26136-mocha-mouse-light-theme)**: found it to be really beautiful and warm, saving this for a chocolatey-themed setup in the future\! 🍫
 
 ..and other themes that I don't care to remember at this point.
 
@@ -46,9 +46,9 @@ The default JetBrains Mono is a beautiful font. No notes.
 ## Area 3: Editor
 
 **Rainbow Brackets**: for some reason I can’t get it to work anymore  
-**Rainbow Indent**
+**[Rainbow Indent](https://plugins.jetbrains.com/plugin/13308-indent-rainbow)**
 
-And my favourite \- **Bongo Cat**\! Need i say more?
+And my favourite \- **[Bongo Cat](https://plugins.jetbrains.com/plugin/27913-typing-bongo-cat)**\! Need I say more? I may get annoyed with this soon but for now, it makes me chuckle!
 
 ![bongo cat typing along](./bongo-cat.gif)
 
@@ -58,13 +58,13 @@ I wanted one of those baby animals that pop up in your status bar or toolbar and
 
 ### Pets
 
-They hang out with each other, play and groove to a tune that only they can hear. You know that fuzzy feeling you get when you watch cat videos? This is that, but a lightweight, portable, low-res, v0.1 version of it 🐱🐶🐰
+[**Pets**](https://plugins.jetbrains.com/plugin/21008-pets) - they hang out with each other, play and groove to a tune that only they can hear. You know that fuzzy feeling you get when you watch cat videos? This is that, but a lightweight, portable, low-res, v0.1 version of it 🐱🐶🐰
 
 ![pets hanging out in the status bar](./pets.gif)
 
 ### Nyan Cat Loader
 
-Indexing a big project? No worries, Nyan Cat is here to give you company. Pycharm hogging your RAM and still refusing to load files? Nyan Cat is working hard to get it to behave. Installing a plugin? Nyan Cat is there to approve it 🌈
+Indexing a big project? No worries, [**Nyan Cat**](https://plugins.jetbrains.com/plugin/8575-nyan-progress-bar) is here to give you company. Pycharm hogging your RAM and still refusing to load files? Nyan Cat is working hard to get it to behave. Installing a plugin? Nyan Cat is there to approve it 🌈
 
 ![nyan cat loader](./nyan-cat.gif)
 
