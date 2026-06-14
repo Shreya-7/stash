@@ -2,6 +2,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
+import { isVisible } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const authors = await getCollection('authors');
@@ -11,7 +12,7 @@ export async function getStaticPaths() {
 const { author: authorId } = Astro.params;
 const author = await getEntry('authors', authorId!);
 const posts = (await getCollection('posts',
-  ({ data }) => !data.draft && data.author.id === authorId
+  (post) => isVisible(post) && post.data.author.id === authorId
 )).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <Base title={author?.data.name}>

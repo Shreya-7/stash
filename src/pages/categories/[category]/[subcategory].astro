@@ -3,9 +3,10 @@ import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import PostCard from '../../../components/PostCard.astro';
 import { u } from '../../../lib/url';
+import { isVisible } from '../../../lib/posts';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const posts = await getCollection('posts', isVisible);
   const pairs = new Set<string>();
   for (const p of posts) {
     if (p.data.subcategory) pairs.add(`${p.data.category}/${p.data.subcategory}`);
@@ -18,7 +19,7 @@ export async function getStaticPaths() {
 
 const { category, subcategory } = Astro.params;
 const posts = (await getCollection('posts',
-  ({ data }) => !data.draft && data.category === category && data.subcategory === subcategory
+  (post) => isVisible(post) && post.data.category === category && post.data.subcategory === subcategory
 )).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <Base title={`${category} / ${subcategory}`}>
