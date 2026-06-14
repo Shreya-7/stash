@@ -55,9 +55,16 @@ const frontmatter = [
 
 await writeFile(file, frontmatter);
 
+// Per-post asset folder (named after the slug) — drop images/GIFs here and
+// reference them as `./<slug>/foo.png` from the markdown.
+const assetDir = join(dir, slug);
+await mkdir(assetDir, { recursive: true });
+
 const rel = file.replace(process.cwd() + '/', '');
+const assetRel = assetDir.replace(process.cwd() + '/', '');
 console.log(`\n✓ created ${rel}`);
-console.log('  (frontmatter has draft: true — flip to false when ready to publish)');
+console.log(`  (frontmatter has draft: true — flip to false when ready to publish)`);
+console.log(`  put images in ${assetRel}/ and reference them as ./${slug}/foo.png`);
 
 const editor = process.env.EDITOR || process.env.VISUAL || 'vi';
 console.log(`  opening in ${editor}…\n`);

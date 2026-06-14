@@ -29,7 +29,7 @@ Although I will highly recommend fairyfloss \- it is a beautiful dark purple the
 
 The winner: **[Sakura](https://plugins.jetbrains.com/plugin/22872-sakura-theme)**
 
-![Sakura theme in JetBrains](./screenshot.png)
+![Sakura theme in JetBrains](./attempts-at-a-cuter-developer-setup/screenshot.png)
 
 Other considerations:
 
@@ -50,7 +50,7 @@ The default JetBrains Mono is a beautiful font. No notes.
 
 And my favourite \- **[Bongo Cat](https://plugins.jetbrains.com/plugin/27913-typing-bongo-cat)**\! Need I say more? I may get annoyed with this soon but for now, it makes me chuckle!
 
-![bongo cat typing along](./bongo-cat.gif)
+![bongo cat typing along](./attempts-at-a-cuter-developer-setup/bongo-cat.gif)
 
 ## Area 4: Cuties
 
@@ -60,13 +60,13 @@ I wanted one of those baby animals that pop up in your status bar or toolbar and
 
 [**Pets**](https://plugins.jetbrains.com/plugin/21008-pets) - they hang out with each other, play and groove to a tune that only they can hear. You know that fuzzy feeling you get when you watch cat videos? This is that, but a lightweight, portable, low-res, v0.1 version of it 🐱🐶🐰
 
-![pets hanging out in the status bar](./pets.gif)
+![pets hanging out in the status bar](./attempts-at-a-cuter-developer-setup/pets.gif)
 
 ### Nyan Cat Loader
 
 Indexing a big project? No worries, [**Nyan Cat**](https://plugins.jetbrains.com/plugin/8575-nyan-progress-bar) is here to give you company. Pycharm hogging your RAM and still refusing to load files? Nyan Cat is working hard to get it to behave. Installing a plugin? Nyan Cat is there to approve it 🌈
 
-![nyan cat loader](./nyan-cat.gif)
+![nyan cat loader](./attempts-at-a-cuter-developer-setup/nyan-cat.gif)
 
 That’s all for this edition! 🩷  
 Tip for the noobs like me: sign in to Jetbrains to sync your settings across all your IDEs so that every project has that cutesy goodness out-of-the-box :)

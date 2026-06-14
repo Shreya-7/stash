@@ -6,7 +6,7 @@
 npm run new:post
 ```
 
-Interactive — asks for title, slug, category, subcategory, author, excerpt. Creates the file with `draft: true` frontmatter and opens it in `$EDITOR` (falls back to `$VISUAL`, then `vi`).
+Interactive — asks for title, slug, category, subcategory, author, excerpt. Creates the file with `draft: true` frontmatter, creates a matching `<slug>/` folder for the post's images, and opens it in `$EDITOR` (falls back to `$VISUAL`, then `vi`).
 
 ```
 $ npm run new:post
@@ -36,12 +36,14 @@ Then jump to [§ Body](#body) below.
 ### 1. Create the file
 
 ```
-src/content/posts/<category>/<slug>.md
+src/content/posts/<category>/<slug>.md       # the post
+src/content/posts/<category>/<slug>/          # its images live here
 ```
 
 - `<category>` must be one of `tech`, `fitness`, `thots`, `crafts` (see [adding a category](adding-a-category.md) to add more).
 - `<slug>` becomes the URL: `src/content/posts/tech/foo.md` → `/posts/tech/foo/`.
 - Use lowercase, hyphenated slugs. Don't change a slug after publishing — it breaks the permalink.
+- Keep each post's images in a sibling folder named after the slug, so assets stay grouped per-post instead of piling up loose in the category folder.
 
 ### 2. Frontmatter
 
@@ -72,11 +74,13 @@ const x = 1;
 
 ## Images, GIFs, videos
 
-**Images and GIFs** — drop the file next to the markdown file, reference it relatively:
+**Images and GIFs** — drop the file in the post's `<slug>/` folder, reference it relatively:
 
 ```markdown
-![alt text](./diagram.png)
+![alt text](./<slug>/diagram.png)
 ```
+
+(e.g. for `src/content/posts/tech/foo.md`, an image at `src/content/posts/tech/foo/diagram.png` is `![alt text](./foo/diagram.png)`). `npm run new:post` creates this folder for you.
 
 Astro's image pipeline resizes and re-encodes automatically. GIFs stay GIFs (not re-encoded). If a GIF is over a few MB, export as `.mp4` instead — usually 10–50× smaller.
 
