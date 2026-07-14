@@ -9,7 +9,7 @@ excerpt: "I made a mac app which enables samsung DeX on a mac through USB debugg
 ---
 
 TLDR: I made a mac app which enables samsung DeX on a mac through USB debugging. Check it out here [github.com/abhishekmsingh/SamDex](http://github.com/abhishekmsingh/SamDex/tree/main).
-I couldn't bundle this into a mac app as I dont wanna pay the developer fee, please follow the instructions to start the app on your mac!
+I couldn't bundle this into a mac app on app store as I dont wanna pay the developer fee, please follow the instructions in the repo to start the app on your mac!
 
 # What was the problem
 
